@@ -2,7 +2,7 @@ class GooglePackage
   attr_reader :text
 
   def initialize()
-    @text = []
+    @text = ""
   end
 
   def analyze

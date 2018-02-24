@@ -6,7 +6,7 @@ class GooglePackageBuilder
     normalizer = TweetNormalizer.new()
     TwitterSearchHistory.create(normalizer.save)
     tweets.each do |tweet|
-      google_package.text << normalizer.normalize(tweet)
+      google_package.text + " " + normalizer.normalize(tweet)
     end
     google_package
   end

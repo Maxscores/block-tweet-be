@@ -6,7 +6,7 @@ namespace :twitter_query do
     google_package.text << Rake::Task['twitter_query:etherium'].execute
     google_package.text << Rake::Task['twitter_query:blockchain'].execute
     google_package.text << Rake::Task['twitter_query:crypto'].execute
-    HourSentiment.create(google_package.analyze)
+    HourSentiment.create!(google_package.analyze)
   end
 
   desc "TODO"
