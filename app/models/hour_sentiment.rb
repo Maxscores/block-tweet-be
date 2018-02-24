@@ -1,0 +1,3 @@
+class HourSentiment < ApplicationRecord
+  
+end
