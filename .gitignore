@@ -14,3 +14,8 @@
 !/tmp/.keep
 
 .byebug_history
+
+config/google_key/*
+
+# Ignore application configuration
+/config/application.yml
