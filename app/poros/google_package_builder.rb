@@ -1,14 +1,12 @@
 class GooglePackageBuilder
-  def self.build(query)
-    google_package = []
-    end_tweet = TwitterSearchHistory.last.end_tweet_id
-    tweets = TwitterService.search("#{query}", since_id: end_tweet)
+  def build(query)
+    google_package = GooglePackage.new
+    tweets = TwitterService.search("#{query}")
     normalizer = TweetNormalizer.new()
-    TwitterSearchHistory.create(normalizer.save)
+    # TwitterSearchHistory.create(normalizer.save)
     tweets.each do |tweet|
-      google_package.text + " " + normalizer.normalize(tweet)
+      google_package.content << normalizer.normalize(tweet)
     end
     google_package
   end
-
 end

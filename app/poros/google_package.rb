@@ -1,11 +1,11 @@
 class GooglePackage
-  attr_reader :text
+  attr_reader :content
 
   def initialize()
-    @text = ""
+    @content = []
   end
 
   def analyze
-    GoogleNaturalLanguageService.analyze(text)
+    GoogleNaturalLanguageService.analyze(content.join(" "))
   end
 end

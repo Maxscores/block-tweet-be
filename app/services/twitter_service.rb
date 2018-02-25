@@ -9,6 +9,6 @@ class TwitterService
   end
 
   def self.search(query)
-    client.search("#{query}", lang: 'en')
+    client.search("#{query}", lang: 'en', result_type: 'popular')
   end
 end

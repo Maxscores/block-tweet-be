@@ -10,10 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180224204129) do
+ActiveRecord::Schema.define(version: 20180224215045) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "hour_sentiments", force: :cascade do |t|
+    t.string "score"
+    t.string "magnitude"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "twitter_search_histories", force: :cascade do |t|
     t.string "start_tweet_id"
