@@ -1,5 +1,5 @@
 class Api::V1::HourSentimentController < ApplicationController
-  def create
-    HourSentiment.create(score: params[:score], magnitude: params[:magnitude], created_at: params[:created_at], query: params[:query])
+  def show
+    render json: GroupHourSentiment.new(), each_serializer: GroupHourSentimentSerializer
   end
 end
