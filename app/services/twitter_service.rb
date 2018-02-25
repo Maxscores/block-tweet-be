@@ -12,7 +12,7 @@ class TwitterService
     client.search("#{query}", lang: 'en', result_type: 'popular')
   end
 
-  def self.step_backwards(query, max_id = 9675927855190220810, start_date = HourSentiment.first.created_at)
+  def self.step_backwards(query, max_id = 9675927855190220810, start_date = HourSentiment.last.created_at)
     tweets = client.search("#{query}", lang: 'en', result_type: "mixed", max_id: max_id)
     sorted = tweets.sort_by {|tweet| Time.now - tweet.created_at}
     selected_tweet = sorted.first
