@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180224215045) do
+ActiveRecord::Schema.define(version: 20180225020411) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 20180224215045) do
     t.string "magnitude"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "query"
   end
 
   create_table "twitter_search_histories", force: :cascade do |t|
