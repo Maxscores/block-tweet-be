@@ -1,5 +1,5 @@
 class HourSentimentSerializer < ActiveModel::Serializer
-  attributes :normalized_score, :query, :hours_ago, :created_at
+  attributes :id, :normalized_score, :query, :hours_ago, :created_at
 
   def normalized_score
     object.score.to_f * object.magnitude.to_f
