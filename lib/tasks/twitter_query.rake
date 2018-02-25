@@ -10,12 +10,12 @@ namespace :twitter_query do
                           query: "bitcoin")
     puts "bitcoin received"
 
-    etherium_package =  GooglePackageBuilder.new.build("etherium")
-    puts "etherium packaged"
+    etherium_package =  GooglePackageBuilder.new.build("ethereum")
+    puts "ethereum packaged"
     etherium_sentiment = etherium_package.analyze
     HourSentiment.create!(score: etherium_sentiment.score,
                           magnitude: etherium_sentiment.magnitude,
-                          query: "etherium")
+                          query: "ethereum")
 
     blockchain_package = GooglePackageBuilder.new.build("blockchain")
     puts "blockchain packaged"
